@@ -116,12 +116,9 @@ def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
     # Отправляем загруженный файл из папки uploads
 
-#if __name__ == '__main__':
-#    app.config['UPLOAD_FOLDER'] = 'uploads'
-#    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-#    app.run(debug=True)
+if __name__ == '__main__':
+    app.config['UPLOAD_FOLDER'] = 'uploads'
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+    app.run(debug=True)
     # Запускаем веб-приложение на локальном сервере
 
-if __name__ == "__main__":
-    import uvicorn  # Импорт модуля uvicorn
-    uvicorn.run(app, host="localhost", port=8000)  # Запуск сервера с использованием модуля uvicorn
