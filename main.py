@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, abort, send_from_directory
 # Импортируем необходимые модули из библиотеки Flask для создания веб-приложения
-
+import uvicorn
 from PIL import Image, ImageDraw, ImageEnhance, ImageOps
 # Импортируем модули из библиотеки PIL (Python Imaging Library) для работы с изображениями
 
@@ -10,6 +10,9 @@ import requests
 import os
 import base64
 # Импортируем необходимые модули для работы с графиками, массивами, отправкой запросов, операционной системой и кодированием Base64
+
+import matplotlib
+matplotlib.use('agg')
 
 app = Flask(__name__)
 # Создаем экземпляр класса Flask для создания веб-приложения
